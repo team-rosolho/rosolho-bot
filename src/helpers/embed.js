@@ -11,4 +11,13 @@ function errorEmbed(message, text) {
     message.channel.send({ embeds: [embed] });
 }
 
-module.exports = { errorEmbed }
+function customEmbed(message) {
+    if (!message) throw new Error("message must be passed down as param!")
+    
+    const embed = new MessageEmbed()
+    .setTimestamp(new Date())
+
+    return embed;
+}
+
+module.exports = { errorEmbed, customEmbed }

@@ -4,15 +4,7 @@ moment.locale('ko-KR');
 module.exports.run = async (client, message, args) => {
     var momentDate = moment(new Date());
     var unixDate = momentDate.unix();
-
-    if (momentDate.isValid()) {
-        var naturalDate = momentDate.format("MMMM DD, YYYY");
-        var dateJSON = {
-            "unix": unixDate,
-            "natural": naturalDate
-        };
-        message.channel.send('현재 시간: <t:' + JSON.stringify(dateJSON.unix) + '>')
-    }
+    message.channel.send('현재 시간: <t:' + JSON.stringify(unixDate) + '>')
 }
 
 module.exports.help = {

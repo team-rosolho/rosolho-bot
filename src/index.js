@@ -1,7 +1,7 @@
 'use strict';
 
 console.log('Loading...');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, MessageAttachment } = require('discord.js');
 const fs = require('fs')
 const client = new Client({ intents: ["GUILDS", "GUILD_BANS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INTEGRATIONS", "GUILD_INVITES", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGE_TYPING", "GUILD_PRESENCES", "GUILD_VOICE_STATES", "GUILD_WEBHOOKS", "DIRECT_MESSAGES", "DIRECT_MESSAGE_REACTIONS", "DIRECT_MESSAGE_TYPING"] });
 
@@ -17,6 +17,7 @@ const User = require('./models/PremiumSchema');
 const { createCmd } = require('./dataHandler');
 const config = require('./client');
 const { message } = require('noblox.js');
+const { CaptchaGenerator } = require('captcha-canvas');
 
 module.exports = client;
 
